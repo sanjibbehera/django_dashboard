@@ -15,5 +15,8 @@ import datetime
 # Create your views here.
 
 def index(request):
-    distinctenvapp = Env_app.objects.values('environment_name').distinct()
-    return render(request, 'cmsenvmgmt/index.html', {'distinctenvapp' : distinctenvapp})
+    e2e1appnos = Env_app.objects.filter(environment_name='E2E1').count()
+    e2e2appnos = Env_app.objects.filter(environment_name='E2E2').count()
+    e2e1dbnos = Env_app.objects.filter(environment_name='E2E1 DB').count()
+    e2e2dbnos = Env_app.objects.filter(environment_name='E2E2 DB').count()
+    return render(request, 'cmsenvmgmt/index.html', {'e2e1appnos' : e2e1appnos, 'e2e2appnos' : e2e2appnos, 'e2e1dbnos' : e2e1dbnos, 'e2e2dbnos' : e2e2dbnos})
