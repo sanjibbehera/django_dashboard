@@ -30,7 +30,7 @@ pip install django-crispy-forms  # Additional requirement to use Bootstrap in Dj
 ## Create Postgres DB User using the below commands:-
 CREATE USER postgresuser with encrypted password '<password>';
   
-GRANT ALL PRIVILEGES ON DATABASE <DBNAME> to postgresuser;
+GRANT ALL PRIVILEGES ON DATABASE < DBNAME > to postgresuser;
   
 ALTER ROLE postgresuser SET client_encoding TO 'utf8';
 
