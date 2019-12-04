@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Cache-control" content="no-cache, must-revalidate">
+	{% load static from staticfiles %}
+	<title>Environment Management Configuration!!</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</head>
+<body>
+    <center><h1>Welcome to Environment Configuration Managed System!!</h1></center>
+
+    <div><center><table id="t1"><tr>
+        {% for obj in distinctenvapp %}
+        <td>{% autoescape on %}
+            <button class="button" id="{{ obj.environment_name }}" onclick="getApps('{{ obj.environment_name }}')">
+                {{ obj.environment_name }}
+            </button>
+            {% endautoescape %}
+            </td>
+        {% endfor %} 
+        </tr></table></center>
+    </div>
+</body>
+</html>
