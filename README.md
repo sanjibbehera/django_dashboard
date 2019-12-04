@@ -16,8 +16,22 @@ django-admin startproject <project_name>
 python manage.py startapp <app_name>
 
 Additional Modules to be installed for the app's requirement.
+
 pip install psycopg2    ## Required to connect to Postgres DB.
+
 pip install djangorestframework   # Required to use CRUD operations via REST Framework.
+
 pip install markdown       # Markdown support for the browsable API.
+
 pip install django-filter  # Filtering support
+
 pip install django-crispy-forms  # Additional requirement to use Bootstrap in Django.
+
+## Create Postgres DB User using the below commands:-
+CREATE USER postgresuser with encrypted password '<password>';
+  
+GRANT ALL PRIVILEGES ON DATABASE <DBNAME> to postgresuser;
+  
+ALTER ROLE postgresuser SET client_encoding TO 'utf8';
+
+ALTER ROLE postgresuser SET default_transaction_isolation TO 'read committed';
