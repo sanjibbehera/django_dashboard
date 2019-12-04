@@ -1,26 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta http-equiv="Cache-control" content="no-cache, must-revalidate">
-	{% load static from staticfiles %}
-	<title>Environment Management Configuration!!</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  {% load static from staticfiles %}
+  <title>Environment Management Configuration!!</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 </head>
 <body>
-    <center><h1>Welcome to Environment Configuration Managed System!!</h1></center>
-
-    <div><center><table id="t1"><tr>
-        {% for obj in distinctenvapp %}
-        <td>{% autoescape on %}
-            <button class="button" id="{{ obj.environment_name }}" onclick="getApps('{{ obj.environment_name }}')">
-                {{ obj.environment_name }}
-            </button>
-            {% endautoescape %}
-            </td>
-        {% endfor %} 
-        </tr></table></center>
+  <nav class="navbar navbar-expand-lg bg-secondary">
+    <!-- Brand/logo -->
+    <a class="navbar-brand" href="#"> 
+        <img src="{% static 'img/phoenix-logo.jpg' %}"
+        alt="" style="width:75px;height:50px"> 
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav  ml-auto">
+        <li class="nav-item">
+            <p class="navbar-text h4">Welcome to Environment Configuration Managed System.</p>
+        </li>
+        <li class="nav-item">
+            <p class="navbar-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link h4 mr-md-2" href="#" style="display: inline-block; color: #006400">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link mr-md-2 dropdown-toggle h4"  href="#" id="navbarDashboard" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: inline-block; color: #90ee90">
+              Dashboard
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDashboard">
+            <a class="dropdown-item" href="#">E2E2 App Dashboard</a>
+            <a class="dropdown-item" href="#">E2E1 App Dashboard</a>
+            <a class="dropdown-item" href="#">E2E1 DB Dashboard</a>
+            <a class="dropdown-item" href="#">E2E2 DB Dashboard</a>
+            <a class="dropdown-item" href="#">Overall Dashboard</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link mr-md-2 dropdown-toggle h4" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: inline-block; color: #90ee90">
+            Services Availability
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">E2E1 App Services Availability</a>
+            <a class="dropdown-item" href="#">E2E2 App Services Availability</a>
+            <a class="dropdown-item" href="#">E2E1 DB Services Availability</a>
+            <a class="dropdown-item" href="#">E2E2 DB Services Availability</a>
+            <a class="dropdown-item" href="#">Overall Services Availability</a>
+          </div>
+        </li>
+        <li class="nav-item h4">
+          <a class="nav-link" mr-md-2 href="#" style="display: inline-block; color: #8f8fff">About</a>
+        </li>
+      </ul>
     </div>
+  </nav>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 </body>
 </html>
