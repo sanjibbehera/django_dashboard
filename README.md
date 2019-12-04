@@ -14,3 +14,10 @@ Then use pip to install django.
 Once installed, use django-admin to create your base project and then create your application.
 django-admin startproject <project_name>
 python manage.py startapp <app_name>
+
+Additional Modules to be installed for the app's requirement.
+pip install psycopg2    ## Required to connect to Postgres DB.
+pip install djangorestframework   # Required to use CRUD operations via REST Framework.
+pip install markdown       # Markdown support for the browsable API.
+pip install django-filter  # Filtering support
+pip install django-crispy-forms  # Additional requirement to use Bootstrap in Django.
