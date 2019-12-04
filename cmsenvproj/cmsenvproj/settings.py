@@ -25,7 +25,7 @@ SECRET_KEY = '0v$08bw=%+sh8a*^3$nvpz-8sz&hx+1!$z3(w6ml&)wn!2lwkm'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1','localhost']
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cmsenvmgmt'
 ]
 
 MIDDLEWARE = [
@@ -75,8 +76,12 @@ WSGI_APPLICATION = 'cmsenvproj.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'cmsenvdb',
+        'USER': 'cmsenvuser',
+        'PASSWORD': 'cmsenvuser123',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
