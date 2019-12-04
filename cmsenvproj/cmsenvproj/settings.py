@@ -62,7 +62,7 @@ ROOT_URLCONF = 'cmsenvproj.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['C:/Users/sanjib behera/Documents/GitHub/django_dashboard/cmsenvproj/cmsenvmgmt/templates'],
+        'DIRS': ['C:/Users/sanjib behera/Documents/GitHub/django_dashboard/cmsenvproj/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
